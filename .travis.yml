@@ -10,9 +10,11 @@ addons:
   code_climate:
     repo_token: 9ec34a013224a58d8f7cbea3b93a22610d4c41ac55b5ed86fcedfd7ee87cf5c6
 cache:
+  yarn: true
   directories:
     - node_modules
 before_install:
+  - npm update -g npm
   - npm install
 before_script:
   - npm run lint
