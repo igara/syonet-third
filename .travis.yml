@@ -14,8 +14,10 @@ cache:
     - node_modules
 before_install:
   - npm install
+  - npm install -g codeclimate-test-reporter
 before_script:
   - npm run lint
   - npm run test
+  - codeclimate-test-reporter < lcov.info
 after_script:
   # - meteor npm run start
