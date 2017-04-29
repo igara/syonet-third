@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 7
+sudo: true
+notifications:
+  slack:
+    rooms:
+      - jointcrew:xocbQgxJ09DxLt5hPQ5m9zBS#bot
+addons:
+  code_climate:
+    repo_token: 9ec34a013224a58d8f7cbea3b93a22610d4c41ac55b5ed86fcedfd7ee87cf5c6
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install
+before_script:
+  - npm run lint
+  - npm run test
+after_script:
+  # - meteor npm run start
